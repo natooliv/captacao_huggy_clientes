@@ -17,7 +17,7 @@ Siga os passos abaixo para configurar o projeto em seu ambiente local.
 
    Execute o comando abaixo no terminal para clonar o repositório:
 ```
-   git clone <url-do-repositorio>
+   git clone https://github.com/natooliv/captacao_huggy_clientes.git
 ```
 2. **Instalação das Dependências**
 
