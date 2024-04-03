@@ -48,7 +48,7 @@ class ClientController extends Controller
             'address' => 'required|string|max:255',
             'bairro' => 'required|string|max:255',
             'estado' => 'required|string|max:255',
-            'photo' => 'nullable|string|max:10240',
+            'photo' => 'nullable|max:10240',
         ]);
 
         try {
