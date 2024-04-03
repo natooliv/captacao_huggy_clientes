@@ -20,14 +20,14 @@
         "zircote/swagger-php": "^4.0"
     },
         "require-dev": {
-            "fakerphp/faker": "^1.15",
-            "guzzlehttp/guzzle": "^7.3",
-            "laravel/pint": "^1.0",
-            "laravel/sail": "^1.12",
-            "mockery/mockery": "^1.4",
-            "nunomaduro/collision": "^6.1",
-            "phpunit/phpunit": "^9.5"
-        },
+        "fakerphp/faker": "^1.15",
+        "guzzlehttp/guzzle": "^7.8",
+        "laravel/pint": "^1.0",
+        "laravel/sail": "^1.12",
+        "mockery/mockery": "^1.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5"
+    },
 
     "autoload": {
         "psr-4": {

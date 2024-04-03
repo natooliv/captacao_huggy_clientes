@@ -48,11 +48,20 @@ class ClientController extends Controller
             'address' => 'required|string|max:255',
             'bairro' => 'required|string|max:255',
             'estado' => 'required|string|max:255',
-            'photo' => 'nullable|max:10240',
+            'photo' => 'nullable|string|max:10240',
         ]);
 
         try {
-            if ($request->hasFile('photo')) {
+            if ($request->has('photo') && filter_var($request->photo, FILTER_VALIDATE_URL)) {
+                // Assume que a foto é uma URL válida
+                $photoUrl = $request->photo;
+                $photoContents = file_get_contents($photoUrl);
+                $photoName = basename($photoUrl);
+                $photoPath = 'public/uploads/' . $photoName;
+                Storage::put($photoPath, $photoContents);
+                $validatedData['photo'] = $photoPath;
+            } elseif ($request->hasFile('photo')) {
+                // O campo photo é um arquivo carregado
                 $file = $request->file('photo');
                 $photoPath = $file->store('public/uploads');
                 $validatedData['photo'] = $photoPath;
@@ -68,6 +77,7 @@ class ClientController extends Controller
             return response()->json(['error' => 'Erro ao processar a requisição'], 500);
         }
     }
+
 
 
     public function update(Request $request, $id)
