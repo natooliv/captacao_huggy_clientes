@@ -1,13 +1,5 @@
 <?php
-/**
- * @OA\Schema(
- *     title="Client",
- *     description="Client model",
- *     @OA\Xml(
- *         name="Client"
- *     )
- * )
- */
+
 
  namespace App\Models;
 
@@ -15,14 +7,7 @@
  use Illuminate\Database\Eloquent\Model;
  use Illuminate\Support\Facades\Log;
 
- /**
-  * Class Client
-  *
-  * @OA\Schema(
-  *     title="Client",
-  *     description="Client model",
-  * )
-  */
+
  class Client extends Model
  {
      use HasFactory;
